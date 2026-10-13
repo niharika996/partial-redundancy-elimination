@@ -1,0 +1,17 @@
+digraph CFG {
+    node [shape=box, style="filled,rounded", fontname="Courier New", fontsize=11];
+    edge [fontname="Helvetica", fontsize=10];
+    labelloc="t"; label="Optimized CFG (Post-LCM)";
+
+    "ENTRY" [label="ENTRY", fillcolor="#d1e7dd", color="#0f5132", penwidth=2];
+    "EXIT" [label="EXIT", fillcolor="#f8d7da", color="#842029", penwidth=2];
+    "EXIT" [shape=none, margin=0, label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="4" bgcolor="#ffffff" color="#495057" style="rounded"><tr><td align="center" border="0"><b>EXIT</b></td></tr><tr><td align="center" border="1" sides="t"></td></tr><tr><td align="left"><i>(empty)</i></td></tr></table>>];
+
+    "ENTRY" -> "B1";
+    "B1" -> "B2";
+    "B1" -> "B_split_1";
+    "B_split_1" -> "B4";
+    "B2" -> "B4";
+    "B3" -> "B4";
+    "B4" -> "EXIT";
+}
